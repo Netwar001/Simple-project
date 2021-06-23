@@ -22,6 +22,5 @@
     "mongodb": "^3.6.9",
     "nodemailer": "^6.6.2"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
