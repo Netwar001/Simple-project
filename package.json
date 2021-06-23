@@ -4,6 +4,6 @@
   "scripts": {
     "postinstall": "npm install --prefix frontend && npm install --prefix backend",
     "build": "npm run build --prefix frontend",
-    "start": "node backend/bin/www.js"
+    "start": "node backend/bin/www"
   }
 }
