@@ -9,11 +9,11 @@ import {AuthRoute, ProtectedRoute} from "../util/route";
 
 const Routes = () => (
     <>
-        <Route exact path="/" component={Home}/>
-        <AuthRoute exact path="/signup" component={Signup}/>
-        <AuthRoute exact path="/verify" component={Verify}/>
-        <AuthRoute exact path="/login" component={Login}/>
-        <ProtectedRoute exact path="/main" component={Main}/>
+            <Route exact path="/" component={Home}/>
+            <AuthRoute path="/signup" component={Signup}/>
+            <AuthRoute path="/verify" component={Verify}/>
+            <AuthRoute path="/login" component={Login}/>
+            <ProtectedRoute path="/main" component={Main}/>
     </>
 );
 
