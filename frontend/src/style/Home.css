@@ -1,0 +1,51 @@
+body {
+    background: url("./img/mountains.jpg") no-repeat;
+    background-size: 100%;
+    color: #333;
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0 0 0.5em 0;
+    text-align: center;
+    font-family: 'Palatino Linotype', serif;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    width: 500px;
+    height: 400px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.button {
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid #333;
+    font-size: 28px;
+    color: #383636;
+    line-height: 1em;
+    padding: 0.5em 0.5em;
+    transition: all 0.5s;
+}
+
+.button:hover {
+    background: #333;
+    color: #fff;
+}
+
+.form-margin {
+    display: flex;
+    margin: 35px;
+    justify-content: center;
+    align-items: center;
+}

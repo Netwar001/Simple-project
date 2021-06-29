@@ -1,16 +1,18 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import "../style/Home.css"
 
 const Form = () => (
     <>
-        <div className="box">
-            <span className="text-center">Начальная страница</span>
-            <div className="home">
-                <Link className="input-container" to="/signup">
+        <div className="form">
+            <h1 className="center-text">Добро пожаловать!</h1>
+            <div className="form-margin">
+                <Link className="button" to="/signup">
                     Регистрация
                 </Link>
-                <br/>
-                <Link className="input-container" to="/login">
+            </div>
+            <div className="form-margin">
+                <Link className="button" to="/login">
                     Авторизация
                 </Link>
             </div>

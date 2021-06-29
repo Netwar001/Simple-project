@@ -3,6 +3,7 @@ import {login} from "../actions/session";
 import {FormErrors} from "./additions/Errors";
 import {Link} from "react-router-dom";
 import {connect} from "react-redux";
+import "../style/Autherization.css";
 
 const mapStateToProps = () => ({});
 
@@ -44,23 +45,31 @@ class Form extends Component {
 
     render() {
         return (
-            <div className="box">
-                <span className="text-center">Авторизация</span>
+            <div className="form-auth">
+                <h1 className="center-text">Авторизация</h1>
                 <div>
                     <FormErrors formErrors={this.state.formErrors}/>
                 </div>
-                <div>
-                    <label>Имя или почта: <input name="usernameOrEmail"
-                                                 value={this.state.usernameOrEmail}
-                                                 onChange={this.handleUserInput}/></label>
-                    <br/>
-                    <label>Пароль: <input name="password"
-                                          value={this.state.password}
-                                          onChange={this.handleUserInput}/></label>
+                <div className="labels-form">
+                    <label className="labels">
+                        <span className="spans">Имя или почта: </span>
+                        <input className="inputs" name="usernameOrEmail"
+                               value={this.state.usernameOrEmail}
+                               onChange={this.handleUserInput}/>
+                    </label>
+                    <label className="labels">
+                        <span className="spans">Пароль: </span>
+                        <input className="inputs" name="password"
+                               value={this.state.password}
+                               onChange={this.handleUserInput}/>
+                    </label>
                 </div>
-                <button onClick={this.submit}>Войти</button>
-                <br/>
-                <Link to="/signup">Создать аккаунт</Link>
+                <div className="form-auth-margin">
+                    <button onClick={this.submit} className="button-auth">Войти</button>
+                </div>
+                <div className="form-auth-margin">
+                    <Link to="/signup" className="link-auth">Создать аккаунт</Link>
+                </div>
             </div>
         );
     }

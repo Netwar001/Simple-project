@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {logout, main} from "../actions/session";
 import Table from "./additions/Table";
 import {connect} from "react-redux";
+import "../style/Main.css"
 
 const mapStateToProps = ({session}) => ({
     session,
@@ -32,10 +33,14 @@ class Form extends Component {
 
     render() {
         return (
-            <div className="box">
-                <button onClick={this.logout}>Выйти</button>
-                <span className="text-center">Таблица пользователей для {this.state.session}</span>
-                <Table data={this.state.users}/>
+            <div>
+                <div className="btn-to-right">
+                    <button className="button-logout" onClick={this.logout}>Выйти</button>
+                </div>
+                <div className="form-main">
+                    <h1 className="text-center">Таблица пользователей для {this.state.session}</h1>
+                    <Table data={this.state.users}/>
+                </div>
             </div>
         );
     }

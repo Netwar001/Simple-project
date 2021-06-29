@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {signup} from "../actions/session";
 import {FormErrors} from "./additions/Errors";
 import {Link} from "react-router-dom";
+import "../style/Autherization.css";
 
 class Form extends Component {
     constructor(props) {
@@ -56,8 +57,8 @@ class Form extends Component {
                 break;
             case 'email':
                 emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-                fieldValidationErrors.email = emailValid ? '' : 'Неправильная структура почты' +
-                    ' *(example@gmail.com)';
+                fieldValidationErrors.email = emailValid ? '' : 'Неправильная структура почты ' +
+                    '*(example@gmail.com)';
                 break;
             case 'password':
                 passwordValid = value.length >= 6;
@@ -83,27 +84,39 @@ class Form extends Component {
 
     render() {
         return (
-            <div className="box">
-                <span className="text-center">Регистрация</span>
+            <div className="form-auth">
+                <h1 className="center-text">Регистрация</h1>
                 <div>
                     <FormErrors formErrors={this.state.formErrors}/>
                 </div>
-                <div>
-                    <label>Имя: <input name="username"
-                                       value={this.state.username}
-                                       onChange={this.handleUserInput}/></label>
-                    <br/>
-                    <label>Почта: <input name="email"
-                                         value={this.state.email}
-                                         onChange={this.handleUserInput}/></label>
-                    <br/>
-                    <label>Пароль: <input name="password"
-                                          value={this.state.password}
-                                          onChange={this.handleUserInput}/></label>
+                <div className="labels-form">
+                    <label className="labels">
+                        <span className="spans">Имя: </span>
+                        <input className="inputs" name="username"
+                               value={this.state.username}
+                               onChange={this.handleUserInput}/>
+                    </label>
+                    <label className="labels">
+                        <span className="spans">Почта: </span>
+                        <input className="inputs" name="email"
+                               value={this.state.email}
+                               onChange={this.handleUserInput}/>
+                    </label>
+                    <label className="labels">
+                        <span className="spans">Пароль: </span>
+                        <input className="inputs" name="password"
+                               value={this.state.password}
+                               onChange={this.handleUserInput}/>
+                    </label>
                 </div>
-                <button onClick={this.submit} disabled={!this.state.formValid}>Создать аккаунт</button>
-                <br/>
-                <Link to="/login">Уже зарегистрированны?</Link>
+                <div className="form-auth-margin">
+                    <button onClick={this.submit} disabled={!this.state.formValid} className="button-auth">
+                        Создать аккаунт
+                    </button>
+                </div>
+                <div className="form-auth-margin">
+                    <Link to="/login" className="link-auth">Уже зарегистрированны?</Link>
+                </div>
             </div>
         );
     }
